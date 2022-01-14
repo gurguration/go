@@ -16,6 +16,12 @@ func main() {
 	fmt.Println(a | b)  //  1011
 	fmt.Println(a ^ b)  //  1001
 	fmt.Println(a &^ b) //  0100
+	// BIT Shifting
+	bita := 8 // 1000
+	fmt.Println("BIT Shifting")
+	fmt.Println(bita << 3)
+	fmt.Println(bita >> 3)
+	fmt.Println("BIT Shifting Done")
 	fmt.Printf("%v: Uninitialized variables are set to zero(false), %T\n", zeroVar, zeroVar)
 	fmt.Printf("%v, %T\n", booli, booli)
 	fmt.Printf("%v, %T\n", boolb, boolb)
