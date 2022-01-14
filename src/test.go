@@ -10,6 +10,12 @@ func main() {
 	booli := 1 == 2
 	boolb := 2 == 2
 	var zeroVar bool
+	a := 10             //  1010
+	b := 3              //  0011
+	fmt.Println(a & b)  //  0010
+	fmt.Println(a | b)  //  1011
+	fmt.Println(a ^ b)  //  1001
+	fmt.Println(a &^ b) //  0100
 	fmt.Printf("%v: Uninitialized variables are set to zero(false), %T\n", zeroVar, zeroVar)
 	fmt.Printf("%v, %T\n", booli, booli)
 	fmt.Printf("%v, %T\n", boolb, boolb)
