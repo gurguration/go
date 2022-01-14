@@ -9,10 +9,10 @@ func main() {
 	fmt.Println(i)
 	myLoop()
 	fmt.Printf("%v, %T ", my_name, my_name)
-	fmt.Printf("%v, %T ", loopvar+11, string(loopvar))
+	fmt.Printf("%v, %T ", string(loopvar), string(loopvar))
 }
 
-var loopvar int = 10
+var loopvar int = 223
 
 func myLoop() {
 	var (
