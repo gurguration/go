@@ -7,6 +7,10 @@ import (
 
 func main() {
 	i := 1
+	booli := 1 == 2
+	boolb := 2 == 2
+	fmt.Printf("%v, %T\n", booli, booli)
+	fmt.Printf("%v, %T\n", boolb, boolb)
 	i = 34
 	var my_name string = "\nGuram"
 	fmt.Println(i)
