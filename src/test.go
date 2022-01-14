@@ -9,6 +9,8 @@ func main() {
 	i := 1
 	booli := 1 == 2
 	boolb := 2 == 2
+	var zeroVar bool
+	fmt.Printf("%v: Uninitialized variables are set to zero(false), %T\n", zeroVar, zeroVar)
 	fmt.Printf("%v, %T\n", booli, booli)
 	fmt.Printf("%v, %T\n", boolb, boolb)
 	i = 34
