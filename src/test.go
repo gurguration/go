@@ -8,7 +8,8 @@ func main() {
 	var my_name string = "\nGuram"
 	fmt.Println(i)
 	myLoop()
-	fmt.Printf("%v, %T", my_name, my_name)
+	fmt.Printf("%v, %T ", my_name, my_name)
+	fmt.Printf("%v, %T ", loopvar+11, string(loopvar))
 }
 
 var loopvar int = 10
@@ -19,7 +20,7 @@ func myLoop() {
 	)
 	fmt.Printf("%v ", actorName)
 	for i := loopvar; i < loopvar; i++ {
-		println(i)
+		fmt.Printf("%v, %t ", i, i)
 	}
 }
 
