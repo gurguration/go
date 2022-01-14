@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 func main() {
 	i := 1
@@ -8,8 +11,8 @@ func main() {
 	var my_name string = "\nGuram"
 	fmt.Println(i)
 	myLoop()
-	fmt.Printf("%v, %T ", my_name, my_name)
-	fmt.Printf("%v, %T ", string(loopvar), string(loopvar))
+	fmt.Printf("%v, %T\n", my_name, my_name)
+	fmt.Printf("%v, %T\n", strconv.Itoa(loopvar), string(loopvar))
 }
 
 var loopvar int = 223
