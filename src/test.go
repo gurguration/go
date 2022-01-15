@@ -2,11 +2,12 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"strconv"
 )
 
 const (
-	_ = iota * 2 // multiplying each value by two
+	_ = iota * math.Sin(1.24) // Iota initializer must be constant
 	one
 	two
 	three
