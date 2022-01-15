@@ -44,7 +44,11 @@ func main() {
 	fmt.Printf("\n" + myString + " My name is Guram\n")
 	bs := []byte(myString)
 	fmt.Printf("This is bytes string %v\n\n", bs)
-	s32 := 'a'
+	//s32 := 'a'
+	var s32 rune
+	s32 = 'a'
+	fmt.Printf("Runes cannot be converted to bytes they are literal characters\n")
+	fmt.Printf("Rune: %v, Type: %T\n", s32, s32)
 	fmt.Printf("uint32 utf-32 type strings are single quoted: %v, %T\n", s32, s32)
 	fmt.Printf("This is byte represantation of string %v, of Type: %T", b, b)
 	//strings are immutable but can be concatenated
