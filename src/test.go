@@ -5,7 +5,15 @@ import (
 	"strconv"
 )
 
+const (
+	_ = iota
+	one
+	two
+	three
+)
+
 func main() {
+	fmt.Printf("Enumerable constants %v  %v  %v\n", one, two, three)
 	i := 1
 	booli := 1 == 2
 	boolb := 2 == 2
