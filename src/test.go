@@ -2,19 +2,19 @@ package main
 
 import (
 	"fmt"
-	"math"
 	"strconv"
 )
 
 const (
-	_ = iota * math.Sin(1.24) // Iota initializer must be constant
-	one
+	_   = iota      // Iota initializer must be constant
+	one = 1 << iota // m
 	two
 	three
+	four
 )
 
 func main() {
-	fmt.Printf("Enumerable constants %v  %v  %v\n", one, two, three)
+	fmt.Printf("Enumerable constants %v  %v  %v  %v\n", one, two, three, four)
 	i := 1
 	booli := 1 == 2
 	boolb := 2 == 2
