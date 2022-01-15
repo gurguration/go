@@ -37,6 +37,8 @@ func main() {
 	fa = 2.1e15
 	fmt.Printf("%v, %T\n", fa, fa) // ieee754 Floating point standard 32bit or 64 bit
 	fmt.Printf("Float arithmetic operations: %v", (fa / cn))
+	myString := "This is my string"
+	fmt.Printf("\nMy sTring: %v, of Type: %T\n", myString, myString)
 }
 
 var loopvar int = 223
