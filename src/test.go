@@ -20,11 +20,21 @@ const (
 	i uint64 = 53 + t // constants can be interpolated unlike variables
 )
 
+const (
+	readonly = 1 << iota
+	x1
+	service
+	x2
+	admin
+)
+
 func main() {
-	fmt.Printf("Typed Constants: %v %T\n", t, t)
-	fmt.Printf("Typed Constants: %v %T\n", y, y)
-	fmt.Printf("Typed Constants: %v %T\n", u, u)
-	fmt.Printf("Typed Constants: %v %T\n", i, i)
+	const role byte = readonly | service | admin
+	fmt.Printf("Print or'ed (|) value of role: %b\n", role)
+	fmt.Printf("Typed Constants: %b %T\n", readonly, readonly)
+	fmt.Printf("Typed Constants: %b %T\n", service, service)
+	fmt.Printf("Typed Constants: %b %T\n", admin, admin)
+	fmt.Printf("Is admin: %v\n", admin&role == admin)
 	fmt.Printf("Enumerable constants %v  %v  %v  %v\n", one, two, three, four)
 	i := 1
 	booli := 1 == 2
