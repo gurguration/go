@@ -42,6 +42,9 @@ func main() {
 	fmt.Printf("\nConvert string alias 105 back to string %v", string(myString[2]))
 	fmt.Printf("\nMy sTring: %v, of Type: %T\n", myString[2], myString[2])
 	fmt.Printf("\n" + myString + " My name is Guram\n")
+	bs := []byte(myString)
+	fmt.Printf("This is bytes string %v\n\n", bs)
+	fmt.Printf("This is byte represantation of string %v, of Type: %T", b, b)
 	//strings are immutable but can be concatenated
 	//myString[2] = byte(105) This results in compile time error
 
