@@ -31,8 +31,8 @@ func main() {
 	myLoop()
 	fmt.Printf("%v, %T\n", my_name, my_name)
 	fmt.Printf("%v, %T\n", strconv.Itoa(loopvar), string(loopvar))
-	var fa float32 = 3.14
-	fa = 3.14e39
+	fa := 3.14i //complex numbers
+	fa = 3.14e23
 	fa = 2.1e15
 	fmt.Printf("%v, %T\n", fa, fa) // ieee754 Floating point standard 32bit or 64 bit
 }
