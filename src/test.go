@@ -13,7 +13,18 @@ const (
 	four
 )
 
+const (
+	t        = 3
+	y        = 'a'
+	u        = "string"
+	i uint64 = 53 + t // constants can be interpolated unlike variables
+)
+
 func main() {
+	fmt.Printf("Typed Constants: %v %T\n", t, t)
+	fmt.Printf("Typed Constants: %v %T\n", y, y)
+	fmt.Printf("Typed Constants: %v %T\n", u, u)
+	fmt.Printf("Typed Constants: %v %T\n", i, i)
 	fmt.Printf("Enumerable constants %v  %v  %v  %v\n", one, two, three, four)
 	i := 1
 	booli := 1 == 2
