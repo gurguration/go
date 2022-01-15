@@ -41,6 +41,10 @@ func main() {
 	//Strings are aliases for bytes
 	fmt.Printf("\nConvert string alias 105 back to string %v", string(myString[2]))
 	fmt.Printf("\nMy sTring: %v, of Type: %T\n", myString[2], myString[2])
+	fmt.Printf("\n" + myString + " My name is Guram\n")
+	//strings are immutable but can be concatenated
+	//myString[2] = byte(105) This results in compile time error
+
 }
 
 var loopvar int = 223
