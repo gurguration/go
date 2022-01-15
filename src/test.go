@@ -38,7 +38,9 @@ func main() {
 	fmt.Printf("%v, %T\n", fa, fa) // ieee754 Floating point standard 32bit or 64 bit
 	fmt.Printf("Float arithmetic operations: %v", (fa / cn))
 	myString := "This is my string"
-	fmt.Printf("\nMy sTring: %v, of Type: %T\n", myString, myString)
+	//Strings are aliases for bytes
+	fmt.Printf("\nConvert string alias 105 back to string %v", string(myString[2]))
+	fmt.Printf("\nMy sTring: %v, of Type: %T\n", myString[2], myString[2])
 }
 
 var loopvar int = 223
