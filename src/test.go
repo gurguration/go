@@ -6,7 +6,7 @@ import (
 )
 
 const (
-	_ = iota
+	_ = iota * 2 // multiplying each value by two
 	one
 	two
 	three
