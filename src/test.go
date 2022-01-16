@@ -80,9 +80,17 @@ func main() {
 	fmt.Printf("Runes cannot be converted to bytes they are literal characters\n")
 	fmt.Printf("Rune: %v, Type: %T\n", s32, s32)
 	fmt.Printf("uint32 utf-32 type strings are single quoted: %v, %T\n", s32, s32)
-	fmt.Printf("This is byte represantation of string %v, of Type: %T", b, b)
+	fmt.Printf("This is byte represantation of string %v, of Type: %T\n", b, b)
 	//strings are immutable but can be concatenated
 	//myString[2] = byte(105) This results in compile time error
+	grades := [3]int{95, 33, 65}
+	fmt.Printf("Grades array %v\n", grades)
+	var myArray [3]int
+	fmt.Printf("This is my array %v\n", myArray)
+	mySecondArray := [...]int{1, 2, 34, 5}
+	fmt.Printf("My second array %v\n", mySecondArray)
+	myThirdArray := [3]string{"my", "name", "is"}
+	fmt.Printf("This is my third array %v\n", myThirdArray)
 
 }
 
