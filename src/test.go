@@ -93,14 +93,31 @@ func main() {
 	fmt.Printf("This is my third array %v\n", myThirdArray)
 	fmt.Printf("Length of my array: %v and capacity: %v\n", len(myThirdArray), cap(myThirdArray))
 	fmt.Printf("Printing my string's first element: %v\n", myThirdArray[1])
-	myMadeArray := make([]string, 10, 50)
+	myMadeArray := make([]string, 1, 50)
 	fmt.Println(cap(myMadeArray))
 	myArrayCopy := &myThirdArray       //pass pointer to copy
 	myArrayCopyOfaCopy := myThirdArray //Slices are at different addresses when copy
 	myThirdArray[2] = "guram"
 	fmt.Printf("Copy of my Third array: %v\n", myArrayCopy)
 	fmt.Printf("Copy of A Copy: %v\n", myArrayCopyOfaCopy)
-
+	// array concatenation
+	// myConcatedArray := slice(myArrayCopyOfaCopy[:], myThirdArray[2])
+	var myNewArray [3]int = [...]int{1, 2, 3}
+	fmt.Printf("Declaring array explicitly and assigning value: %v\n", myNewArray)
+	fmt.Printf("Capacity of new array %v\n", cap(myNewArray))
+	fmt.Printf("Type of new array %T\n", myNewArray)
+	//myMadeArray = append(myMadeArray, "guram") //append function can take multiple
+	//myMadeArray = append(myMadeArray, "zurab") //arguments. and also can use js like
+	//myMadeArray = append(myMadeArray, "dachi") //sytnax [...]{1,2,3}
+	//myMadeArray = append(myMadeArray, "manana")
+	myMadeArray = append(myMadeArray, "manana", "dachi", "zurab", "guram")
+	fmt.Printf("Printing my made array %v, %T\n", myMadeArray, myMadeArray)
+	fmt.Printf("Printing lenght of my made array %v\n", len(myMadeArray))
+	//join two slices together by spread operator
+	myMadeArray = append(myMadeArray, []string{"another slice", "joined"}...)
+	myMadeArray = append(myMadeArray, myThirdArray[:]...)
+	fmt.Printf("This is slice joined by spread operator %v\n", myMadeArray)
+	fmt.Printf("Pop element from the slice: %v", myMadeArray[2:len(myMadeArray)-1])
 }
 
 var loopvar int = 223
