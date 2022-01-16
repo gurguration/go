@@ -30,7 +30,7 @@ const (
 func main() {
 	var a []int = []int{1, 2, 3, 4, 5}
 	fmt.Printf("this is a original %v\n", a)
-	b := append(a[:2], a[3:]...)
+	b := append(a[:2], a[3:]...) // This makes a and b point to the same address
 	fmt.Printf("this is b%v\n", b)
 	fmt.Printf("this is a again %v\n", a)
 
