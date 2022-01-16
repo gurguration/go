@@ -91,6 +91,15 @@ func main() {
 	fmt.Printf("My second array %v\n", mySecondArray)
 	myThirdArray := [3]string{"my", "name", "is"}
 	fmt.Printf("This is my third array %v\n", myThirdArray)
+	fmt.Printf("Length of my array: %v and capacity: %v\n", len(myThirdArray), cap(myThirdArray))
+	fmt.Printf("Printing my string's first element: %v\n", myThirdArray[1])
+	myMadeArray := make([]string, 10, 50)
+	fmt.Println(cap(myMadeArray))
+	myArrayCopy := &myThirdArray       //pass pointer to copy
+	myArrayCopyOfaCopy := myThirdArray //Slices are at different addresses when copy
+	myThirdArray[2] = "guram"
+	fmt.Printf("Copy of my Third array: %v\n", myArrayCopy)
+	fmt.Printf("Copy of A Copy: %v\n", myArrayCopyOfaCopy)
 
 }
 
