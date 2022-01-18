@@ -28,16 +28,19 @@ const (
 )
 
 func main() {
-	a := [...]int{1, 2, 3, 4, 5}
-	a1 := a
-	a1[1] = 432
-	fmt.Printf("print type of a:%T and value:%v\n", a, a)
-	fmt.Printf("print type of a1:%T and value:%v\n", a1, a1)
-	var b []int = []int{1, 2, 3, 4, 5}
-	b1 := b
-	b1[1] = 433
-	fmt.Printf("print type of b:%T and value:%v\n", b, b)
-	fmt.Printf("print type of b1:%T and value:%v\n", b1, b1)
+	//myMap := make(map[string]int)
+	myMap := map[string]int{
+		"TBILISI":  100,
+		"Istanbul": 2,
+		"Izmir":    1,
+		"Prague":   1,
+		"Berlin":   0,
+		"Warsaw":   1,
+	}
+	delete(myMap, "Warsaw")
+	myMapCopy := myMap
+	fmt.Println(myMapCopy)
+
 }
 
 var loopvar int = 223
