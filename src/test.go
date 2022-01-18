@@ -39,13 +39,17 @@ type Specialist struct {
 }
 
 func main() {
-	switch i := 8 - 6; i {
-	case 1:
-		fmt.Println("one")
-	case 2:
-		fmt.Println("two")
-	case 3, 4, 5, 6, 7, 8, 9:
-		fmt.Println("three, four, five, six, seven, eight, nine")
+	i := 5
+	switch { //doesn't have to be boolean like in if's case
+	case i >= 0 && i <= 2:
+		fmt.Println("Is between 0 and 3")
+		fallthrough // Fallthrough is logicless it will execute anyway
+	case i <= 5 && i >= 3:
+		fmt.Println("Is between 2 and 6")
+		fallthrough
+	case i == 10:
+		fmt.Println("I is 10")
+		fallthrough
 	default:
 		fmt.Println("another number")
 	}
