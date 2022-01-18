@@ -39,15 +39,15 @@ type Specialist struct {
 }
 
 func main() {
-	switch 8 {
+	switch i := 8 - 6; i {
 	case 1:
 		fmt.Println("one")
 	case 2:
 		fmt.Println("two")
 	case 3, 4, 5, 6, 7, 8, 9:
-		fmt.Println("three")
+		fmt.Println("three, four, five, six, seven, eight, nine")
 	default:
-		fmt.Println("not one two or three")
+		fmt.Println("another number")
 	}
 }
 
