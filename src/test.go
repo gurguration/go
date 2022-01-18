@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"reflect"
 )
 
 const (
@@ -29,7 +30,7 @@ const (
 
 type Doctor struct {
 	number     int
-	specialty  string
+	specialty  string `required max: "10"`
 	companions string
 }
 
@@ -39,6 +40,11 @@ type Specialist struct {
 }
 
 func main() {
+	originalDoc := reflect.TypeOf(Doctor{specialty: "veryvery long name for the doc"})
+	field, _ := originalDoc.FieldByName("specialty")
+	fmt.Println(originalDoc)
+	fmt.Println(field)
+	fmt.Println(field.Tag)
 	myDoc := Specialist{
 		isSpecialist: true,
 		Doctor:       Doctor{specialty: "Psyciatrist"},
