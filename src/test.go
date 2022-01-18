@@ -27,21 +27,25 @@ const (
 	admin
 )
 
+type Doctor struct {
+	number     int
+	actorName  string
+	companions string
+}
+
 func main() {
-	//myMap := make(map[string]int)
-	myMap := map[string]int{
-		"TBILISI":  100,
-		"Istanbul": 2,
-		"Izmir":    1,
-		"Prague":   1,
-		"Berlin":   0,
-		"Warsaw":   1,
+	myDoc := Doctor{
+		number:     3,
+		actorName:  "Buba Kikabidze",
+		companions: "Bidzina Bidzinashvili",
 	}
-	delete(myMap, "Berlin")
-	myMapCopy := myMap
-	fmt.Println(myMapCopy)
-	_, ok := myMap["Berlin"]
-	fmt.Println(ok)
+	fmt.Println(myDoc)
+	fmt.Println(myDoc.actorName)
+	anotherDoc := Doctor{}
+	anotherDoc.number = 10
+	anotherDoc.actorName = "George Clooney"
+	fmt.Println(myDoc)
+	fmt.Println(anotherDoc)
 
 }
 
