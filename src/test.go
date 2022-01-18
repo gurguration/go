@@ -39,12 +39,12 @@ type Specialist struct {
 }
 
 func main() {
-	switch 2 {
+	switch 8 {
 	case 1:
 		fmt.Println("one")
 	case 2:
 		fmt.Println("two")
-	case 3:
+	case 3, 4, 5, 6, 7, 8, 9:
 		fmt.Println("three")
 	default:
 		fmt.Println("not one two or three")
