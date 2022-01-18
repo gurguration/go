@@ -41,9 +41,8 @@ type Specialist struct {
 func main() {
 	myDoc := Specialist{
 		isSpecialist: true,
+		Doctor:       Doctor{specialty: "Psyciatrist"},
 	}
-	myDoc.number = 1
-	myDoc.specialty = "Psychiatrist"
 	fmt.Println(myDoc)
 }
 
