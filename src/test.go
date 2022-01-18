@@ -29,17 +29,22 @@ const (
 
 type Doctor struct {
 	number     int
-	actorName  string
+	specialty  string
 	companions string
 }
 
-func main() {
-	myAnonStruct := struct {
-		myname string
-		age    int
-	}{age: 11, myname: "guram"}
-	fmt.Println(myAnonStruct)
+type Specialist struct {
+	Doctor
+	isSpecialist bool
+}
 
+func main() {
+	myDoc := Specialist{
+		isSpecialist: true,
+	}
+	myDoc.number = 1
+	myDoc.specialty = "Psychiatrist"
+	fmt.Println(myDoc)
 }
 
 var loopvar int = 223
