@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"reflect"
 )
 
 const (
@@ -40,16 +39,12 @@ type Specialist struct {
 }
 
 func main() {
-	originalDoc := reflect.TypeOf(Doctor{specialty: "veryvery long name for the doc"})
-	field, _ := originalDoc.FieldByName("specialty")
-	fmt.Println(originalDoc)
-	fmt.Println(field)
-	fmt.Println(field.Tag)
-	myDoc := Specialist{
-		isSpecialist: true,
-		Doctor:       Doctor{specialty: "Psyciatrist"},
+	ifContition := false
+	if ok := ifContition; ok {
+		fmt.Println("It is True")
+	} else {
+		fmt.Println("It is False")
 	}
-	fmt.Println(myDoc)
 }
 
 var loopvar int = 223
