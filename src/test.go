@@ -39,7 +39,9 @@ type Specialist struct {
 }
 
 func main() {
-	for i, j := 0, 0; i < 5; i, j = i+1, j+2 {
-		fmt.Printf("This is i: %v, and this is J: %v\n ", i, j)
+	i := 0
+	for ; i < 15; i++ {
+		fmt.Println("This is i:", i)
+		i = i + 2
 	}
 }
