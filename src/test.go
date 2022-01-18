@@ -39,17 +39,16 @@ type Specialist struct {
 }
 
 func main() {
-	i := 5
-	switch { //case doesn't have to be boolean like in if's case
-	case i >= 0 && i <= 2:
-		fmt.Println("Is between 0 and 3")
-		fallthrough // Fallthrough is logicless it will execute anyway
-	case i <= 5 && i >= 3:
-		fmt.Println("Is between 2 and 6")
-		fallthrough
-	case i == 10:
-		fmt.Println("I is 10")
-		fallthrough
+	// var i interface{} = "string"
+	// var i interface{} = 1
+	var i interface{} = true
+	switch i.(type) { //case doesn't have to be boolean like in if's case
+	case int:
+		fmt.Println("It is integer type")
+	case string:
+		fmt.Println("It's string type")
+	case bool:
+		fmt.Println("It's bool type")
 	default:
 		fmt.Println("another number")
 	}
