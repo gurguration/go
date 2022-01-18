@@ -37,9 +37,11 @@ func main() {
 		"Berlin":   0,
 		"Warsaw":   1,
 	}
-	delete(myMap, "Warsaw")
+	delete(myMap, "Berlin")
 	myMapCopy := myMap
 	fmt.Println(myMapCopy)
+	_, ok := myMap["Berlin"]
+	fmt.Println(ok)
 
 }
 
