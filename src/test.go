@@ -39,36 +39,7 @@ type Specialist struct {
 }
 
 func main() {
-	// var i interface{} = "string"
-	// var i interface{} = 1
-	var i interface{} = 3
-	switch i.(type) { //case doesn't have to be boolean like in if's case
-	case int:
-		fmt.Println("It is integer type")
-		break
-		fmt.Println("This doesn't execute")
-	case string:
-		fmt.Println("It's string type")
-	case bool:
-		fmt.Println("It's bool type")
-	default:
-		fmt.Println("another number")
+	for i, j := 0, 0; i < 5; i, j = i+1, j+2 {
+		fmt.Printf("This is i: %v, and this is J: %v\n ", i, j)
 	}
 }
-
-var loopvar int = 223
-
-func myLoop() {
-	var (
-		actorName = 1
-	)
-	fmt.Printf("%v ", actorName)
-	for i := loopvar; i < loopvar; i++ {
-		fmt.Printf("%v, %t ", i, i)
-	}
-}
-
-var (
-	actorName string = "Elisabeth"
-	season    int    = 11
-)
