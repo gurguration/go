@@ -34,18 +34,11 @@ type Doctor struct {
 }
 
 func main() {
-	myDoc := Doctor{
-		number:     3,
-		actorName:  "Buba Kikabidze",
-		companions: "Bidzina Bidzinashvili",
-	}
-	fmt.Println(myDoc)
-	fmt.Println(myDoc.actorName)
-	anotherDoc := Doctor{}
-	anotherDoc.number = 10
-	anotherDoc.actorName = "George Clooney"
-	fmt.Println(myDoc)
-	fmt.Println(anotherDoc)
+	myAnonStruct := struct {
+		myname string
+		age    int
+	}{age: 11, myname: "guram"}
+	fmt.Println(myAnonStruct)
 
 }
 
