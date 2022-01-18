@@ -41,10 +41,12 @@ type Specialist struct {
 func main() {
 	// var i interface{} = "string"
 	// var i interface{} = 1
-	var i interface{} = true
+	var i interface{} = 3
 	switch i.(type) { //case doesn't have to be boolean like in if's case
 	case int:
 		fmt.Println("It is integer type")
+		break
+		fmt.Println("This doesn't execute")
 	case string:
 		fmt.Println("It's string type")
 	case bool:
