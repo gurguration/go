@@ -40,7 +40,7 @@ type Specialist struct {
 
 func main() {
 	i := 5
-	switch { //doesn't have to be boolean like in if's case
+	switch { //case doesn't have to be boolean like in if's case
 	case i >= 0 && i <= 2:
 		fmt.Println("Is between 0 and 3")
 		fallthrough // Fallthrough is logicless it will execute anyway
