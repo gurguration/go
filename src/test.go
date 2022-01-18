@@ -45,6 +45,15 @@ func main() {
 	} else {
 		fmt.Println("It is False")
 	}
+	guess := 40
+	myNumber := 40
+	if guess == myNumber {
+		fmt.Println("You've guess it!")
+	} else if guess > 100 || guess < 0 {
+		fmt.Println("Out of range")
+	} else if guess < 100 || guess > 0 {
+		fmt.Println("You didn't guess it. Try again")
+	}
 }
 
 var loopvar int = 223
