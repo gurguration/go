@@ -7,11 +7,11 @@ import (
 func main() {
 	greeting := "Hello Go"
 	name := "And Guram!"
-	sayMessage(greeting, name)
+	sayMessage(&greeting, &name)
 	fmt.Println(name)
 }
 
-func sayMessage(msg, name string) {
-	name = "and Lisa"
-	fmt.Println(msg, name)
+func sayMessage(msg, name *string) {
+	*name = "and Lisa"
+	fmt.Println(*msg, *name)
 }
