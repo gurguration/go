@@ -2,11 +2,20 @@ package main
 
 import (
 	"fmt"
+	"log"
 )
 
 func main() {
-	s := []int{1821, 3332, 83, 34, 6}
-	for k, v := range s {
-		fmt.Printf("This is key %v, This is V: %v\n", k, v)
-	}
+
+	defer fmt.Println("hello go world")
+	defer func() {
+		if p := recover(); p != nil {
+			log.Println("Error", p)
+			fmt.Println("Recovered")
+		}
+	}()
+	panic("program crashed")
+	fmt.Println("This should be deferred")
+	fmt.Println("Panic")
+	fmt.Println("end")
 }
