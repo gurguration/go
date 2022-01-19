@@ -1,15 +1,14 @@
 package main
 
 import (
-	"net/http"
+	"fmt"
 )
 
 func main() {
-	http.HandleFunc("/test", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("hello go!"))
-	})
-	err := http.ListenAndServe(":8080", nil)
-	if err != nil {
-		panic("Program crashed")
-	}
+	a := 42
+	b := &a
+	a = a + 1
+
+	fmt.Printf("Value A: %v Value B: %v\n", a, *b)
+	fmt.Printf("address A: %v address B: %v\n", &a, b)
 }
