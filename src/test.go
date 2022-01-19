@@ -5,11 +5,13 @@ import (
 )
 
 func main() {
-	for i := 0; i < 5; i++ {
-		sayMessage("Hello Go!", "And Guram")
-	}
+	greeting := "Hello Go"
+	name := "And Guram!"
+	sayMessage(greeting, name)
+	fmt.Println(name)
 }
 
 func sayMessage(msg, name string) {
+	name = "and Lisa"
 	fmt.Println(msg, name)
 }
