@@ -5,10 +5,11 @@ import (
 )
 
 func main() {
-	a := 42
-	b := &a
-	a = a + 1
+	var ms *myStruct = &myStruct{foo: 55}
+	fmt.Println(ms)
 
-	fmt.Printf("Value A: %v Value B: %v\n", a, *b)
-	fmt.Printf("address A: %v address B: %v\n", &a, b)
+}
+
+type myStruct struct {
+	foo int
 }
