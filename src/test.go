@@ -5,13 +5,14 @@ import (
 )
 
 func main() {
-	greeting := "Hello Go"
-	name := "And Guram!"
-	sayMessage(&greeting, &name)
-	fmt.Println(name)
+	s := sum(1, 22, 33, 2, 3, 41, 94)
+	fmt.Println("The sum is:", s)
 }
 
-func sayMessage(msg, name *string) {
-	*name = "and Lisa"
-	fmt.Println(*msg, *name)
+func sum(numbers ...int) int {
+	sum := 0
+	for _, i := range numbers {
+		sum += i
+	}
+	return sum
 }
