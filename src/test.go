@@ -5,12 +5,9 @@ import (
 )
 
 func main() {
-	mymap := map[string]string{"myname": "guram"}
-	myMapCopy := mymap
-	myMapCopy["myname"] = "lisa"
-	fmt.Println(mymap, myMapCopy)
+	sayMessage("Hello Go!")
 }
 
-type myStruct struct {
-	foo int
+func sayMessage(msg string) {
+	fmt.Println(msg)
 }
