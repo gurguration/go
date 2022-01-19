@@ -2,20 +2,12 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
-	"log"
-	"net/http"
 )
 
 func main() {
-	res, err := http.Get("https://google.com/robots.txt")
-	if err != nil {
-		log.Fatal(err)
+	i := 0
+	for i < 10 {
+		fmt.Printf("i IS: %v\n", i)
+		i++
 	}
-	defer res.Body.Close()
-	robots, err := ioutil.ReadAll(res.Body)
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Printf("Retrieved robots txt: %v: \n", string(robots))
 }
