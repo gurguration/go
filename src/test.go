@@ -1,26 +1,15 @@
 package main
 
 import (
-	"fmt"
-	"log"
+	"net/http"
 )
 
 func main() {
-	fmt.Println("Starting")
-	fmt.Println("Entering panicker")
-	panicker()
-	fmt.Println("After panicker")
-	fmt.Println("Finished")
-
-}
-
-func panicker() {
-	fmt.Println("about to panic")
-	defer func() {
-		if p := recover(); p != nil {
-			fmt.Println("Recovered from error")
-			log.Println("Error was: ", p)
-		}
-	}()
-	panic("something bad happended")
+	http.HandleFunc("/test", func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte("hello go!"))
+	})
+	err := http.ListenAndServe(":8080", nil)
+	if err != nil {
+		panic("Program crashed")
+	}
 }
