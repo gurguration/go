@@ -5,9 +5,11 @@ import (
 )
 
 func main() {
-	sayMessage("Hello Go!")
+	for i := 0; i < 5; i++ {
+		sayMessage("Hello Go!", "And Guram")
+	}
 }
 
-func sayMessage(msg string) {
-	fmt.Println(msg)
+func sayMessage(msg, name string) {
+	fmt.Println(msg, name)
 }
