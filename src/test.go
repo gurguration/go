@@ -5,11 +5,10 @@ import (
 )
 
 func main() {
-	var ms *myStruct
-	fmt.Println(ms) //uninitialized nill pointer
-	// fmt.Println(ms.foo) //Error nil pointer dereference
-	ms = new(myStruct)
-	fmt.Println(ms.foo) //* operator has lower precedence than dot (.)
+	mymap := map[string]string{"myname": "guram"}
+	myMapCopy := mymap
+	myMapCopy["myname"] = "lisa"
+	fmt.Println(mymap, myMapCopy)
 }
 
 type myStruct struct {
