@@ -6,16 +6,21 @@ import (
 )
 
 func main() {
+	fmt.Println("Starting")
+	fmt.Println("Entering panicker")
+	panicker()
+	fmt.Println("After panicker")
+	fmt.Println("Finished")
 
-	defer fmt.Println("hello go world")
+}
+
+func panicker() {
+	fmt.Println("about to panic")
 	defer func() {
 		if p := recover(); p != nil {
-			log.Println("Error", p)
-			fmt.Println("Recovered")
+			fmt.Println("Recovered from error")
+			log.Println("Error was: ", p)
 		}
 	}()
-	panic("program crashed")
-	fmt.Println("This should be deferred")
-	fmt.Println("Panic")
-	fmt.Println("end")
+	panic("something bad happended")
 }
