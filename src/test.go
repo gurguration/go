@@ -12,11 +12,12 @@ func main() {
 		greeting: "Hello",
 		name:     "GO",
 	}
-	b.greet()
-	fmt.Printf("The new name is: %v\n", b.name)
+	res := b.greet()
+	fmt.Println(res)
 }
 
-func (g *Greeter) greet() {
+func (g *Greeter) greet() (result string) {
 	g.name = "New Name"
-	fmt.Println(g.greeting, g.name)
+	result = ("The greeting is: " + g.greeting + " And the name: " + g.name)
+	return
 }
