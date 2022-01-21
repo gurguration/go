@@ -6,10 +6,13 @@ import (
 )
 
 func main() {
-	go sayHello()
+	msg := "Hello"
+	go func() {
+		fmt.Println(msg)
+	}()
 	time.Sleep(1 * time.Millisecond)
 }
 
-func sayHello() {
-	fmt.Println("Hello")
-}
+//func sayHello() {
+//	fmt.Println("Hello")
+//}
