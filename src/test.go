@@ -8,13 +8,15 @@ type Greeter struct {
 }
 
 func main() {
-	g := Greeter{
+	b := Greeter{
 		greeting: "Hello",
 		name:     "GO",
 	}
-	g.greet()
+	b.greet()
+	fmt.Printf("The new name is: %v\n", b.name)
 }
 
-func (g Greeter) greet() {
+func (g *Greeter) greet() {
+	g.name = "New Name"
 	fmt.Println(g.greeting, g.name)
 }
