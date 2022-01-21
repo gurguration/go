@@ -1,17 +1,20 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
-func main() {
-	s := sum(1, 22, 33, 2, 3, 41, 94)
-	fmt.Println("The sum is:", s)
+type Greeter struct {
+	greeting string
+	name     string
 }
 
-func sum(numbers ...int) (result int) {
-	for _, i := range numbers {
-		result += i
+func main() {
+	g := Greeter{
+		greeting: "Hello",
+		name:     "GO",
 	}
-	return
+	g.greet()
+}
+
+func (g Greeter) greet() {
+	fmt.Println(g.greeting, g.name)
 }
