@@ -2,22 +2,23 @@ package main
 
 import "fmt"
 
-type Greeter struct {
-	greeting string
-	name     string
-}
-
 func main() {
-	b := Greeter{
-		greeting: "Hello",
-		name:     "GO",
-	}
-	res := b.greet()
-	fmt.Println(res)
+	fmt.Println("implementing integer incremeneter interface")
+	inc := IntCounter(0)
+	var intIncrementerInterface Incremeneter
+	intIncrementerInterface = &inc
+	intIncrementerInterface.Increment()
+	intIncrementerInterface.Increment()
+	result := intIncrementerInterface.Increment()
+	fmt.Println(result)
 }
 
-func (g *Greeter) greet() (result string) {
-	g.name = "New Name"
-	result = ("The greeting is: " + g.greeting + " And the name: " + g.name)
-	return
+type Incremeneter interface {
+	Increment() int
+}
+type IntCounter int
+
+func (num *IntCounter) Increment() int {
+	*num++
+	return int(*num)
 }
