@@ -7,9 +7,10 @@ import (
 
 func main() {
 	msg := "Hello"
-	go func() {
+	go func(msg string) {
 		fmt.Println(msg)
-	}()
+	}(msg)
+	msg = "Goodbye"
 	time.Sleep(1 * time.Millisecond)
 }
 
