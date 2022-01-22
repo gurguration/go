@@ -1,23 +1,60 @@
 package main
 
-import (
-	"fmt"
-	"sync"
-)
+import "log"
 
-var wg = sync.WaitGroup{}
+type subsciber struct {
+	subids string
+}
+
+func (s subsciber) id() string {
+	return s.subids
+}
+func (s subsciber) react(msg string) {
+	log.Printf("ID %s - received: %s", s.id(), msg)
+}
+
+func (p publisher) removeSubscriber(subid string) {
+	delete(p.subscribers, subid)
+}
+func newSubscriber(id string) subsciber {
+	return subsciber{subids: id}
+}
+
+type Subscriber interface {
+	id() string
+	react(msg string)
+}
+type publisher struct {
+	subscribers map[string]Subscriber
+}
+
+func (p publisher) addSubscriber(subscriber Subscriber) {
+	p.subscribers[subscriber.id()] = subscriber
+}
+func (p publisher) broadcast(msg string) {
+	for _, v := range p.subscribers {
+		v.react(msg)
+	}
+}
+
+func newPublisher() publisher {
+	return publisher{make(map[string]Subscriber)}
+}
+
+type Publisher interface {
+	broadcast(msg string)
+	addSubscriber(subcriber Subscriber)
+	removeSubscriber(id string)
+}
 
 func main() {
-	ch := make(chan int)
-	wg.Add(2)
-	go func(ch chan<- int) {
-		ch <- 53
-		wg.Done()
-	}(ch)
-	go func(ch <-chan int) {
-		i := <-ch
-		fmt.Println(i)
-		wg.Done()
-	}(ch)
-	wg.Wait()
+	var p Publisher
+	p = newPublisher()
+	p.broadcast("hello")
+	s := newSubscriber("23")
+	s2 := newSubscriber("444")
+	p.addSubscriber(s)
+	p.addSubscriber(s2)
+	p.removeSubscriber("23")
+	p.broadcast("helllo")
 }
