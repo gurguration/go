@@ -5,6 +5,8 @@ import (
 	"math"
 )
 
+var i interface{}
+
 type shape interface {
 	area() float64
 	perimeter() float64
@@ -51,23 +53,39 @@ func (r rectangle) area() float64 {
 }
 
 func Calculate(s shape) float64 {
-	result := s.area()
-	if rect, ok := s.(Polygon); ok {
-		fmt.Printf("Rect implements sides function also %T\n", rect)
-		fmt.Printf("Calculating sides: %v\n", rect.getSides())
+	// result := s.area()
+	// if rect, ok := s.(rectangle); ok {
+	// 	fmt.Printf("Rect implements sides function also %T\n", rect)
+	// 	fmt.Printf("Calculating sides: %v\n", rect.getSides())
+	// }
+	// rad := s.perimeter()
+	// fmt.Printf("Radius is: %v\n", rad)
+	// return result
+	switch x := s.(type) {
+	case circle:
+		fmt.Printf("type of interface %T\n", x)
+		return x.perimeter()
+	case rectangle:
+		fmt.Printf("type of interface %T\n", x)
+		fmt.Println("Calling getSides()")
+		x.getSides()
+	default:
+		return x.area()
+
 	}
-	rad := s.perimeter()
-	fmt.Printf("Radius is: %v\n", rad)
-	return result
+	return 1.2
 }
 
 func main() {
 	rshape := rectangle{width: 1.2, heith: 33.22, sides: 9}
 	circle := circle{radius: 23.3}
-	Calculate(circle)
-	Calculate(rshape)
-	fmt.Printf("Type and value of an instance: %T, %v\n", rshape, rshape)
-	fmt.Printf("Type and value of an instance: %T, %v\n", circle, circle)
+	fmt.Println(Calculate(circle))
+	fmt.Println(Calculate(rshape))
+	// fmt.Printf("Type and value of an instance: %T, %v\n", rshape, rshape)
+	// fmt.Printf("Type and value of an instance: %T, %v\n", circle, circle)
 	// rshape.sides := 5
 	// sides := rshape.getSides()
+	i = make(map[string]interface{})
+	// i = true
+	// fmt.Printf("I is of type %T\n", i)
 }
