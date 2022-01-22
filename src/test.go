@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math"
+	"reflect"
 )
 
 var i interface{}
@@ -52,7 +53,14 @@ func (r rectangle) area() float64 {
 	return result
 }
 
-func Calculate(s shape) float64 {
+func Calculate(s interface{}) {
+	myType := reflect.TypeOf(s)
+	fmt.Println(myType.Name())
+	fmt.Println(myType.Kind())
+	fmt.Println(reflect.ValueOf(s))
+	// fileinfo := myType.Field(0)
+	// fmt.Println(fileinfo.Name)
+
 	// result := s.area()
 	// if rect, ok := s.(rectangle); ok {
 	// 	fmt.Printf("Rect implements sides function also %T\n", rect)
@@ -64,23 +72,22 @@ func Calculate(s shape) float64 {
 	switch x := s.(type) {
 	case circle:
 		fmt.Printf("type of interface %T\n", x)
-		return x.perimeter()
+		fmt.Println(x.perimeter())
 	case rectangle:
 		fmt.Printf("type of interface %T\n", x)
 		fmt.Println("Calling getSides()")
 		x.getSides()
 	default:
-		return x.area()
+		fmt.Println("Don't know the type")
 
 	}
-	return 1.2
 }
 
 func main() {
 	rshape := rectangle{width: 1.2, heith: 33.22, sides: 9}
 	circle := circle{radius: 23.3}
-	fmt.Println(Calculate(circle))
-	fmt.Println(Calculate(rshape))
+	Calculate(circle)
+	Calculate(rshape)
 	// fmt.Printf("Type and value of an instance: %T, %v\n", rshape, rshape)
 	// fmt.Printf("Type and value of an instance: %T, %v\n", circle, circle)
 	// rshape.sides := 5
