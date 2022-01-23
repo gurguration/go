@@ -1,18 +1,24 @@
 package main
 
 import (
+	"context"
 	"fmt"
-	"log"
-
-	"../car"
+	"time"
+	// "strconv"
+	// "../car"
 )
 
 func main() {
-	c := car.NewCar()
-	fmt.Println(c.DisplayBrandName(2055))
-	displayablaBrand, err := c.DisplayBrandName(2022)
-	if err != nil {
-		log.Fatal("Err")
-	}
-	log.Println(displayablaBrand)
+	cn := context.Background()
+	_ = context.WithValue(cn, "myKey", 123)
+	// t := time.Now().Add(1 * time.Second)
+	// ctx2, _ := context.WithDeadline(cn, t)
+	// deadline, ok := ctx2.Deadline()
+	// fmt.Println(deadline)
+	// log.Print(ok)
+	timeout := 1 * time.Second
+	ctx2, _ := context.WithTimeout(cn, timeout)
+	fmt.Println(ctx2.Err())
+	time.Sleep(2 * time.Second)
+	fmt.Println(ctx2.Err())
 }
