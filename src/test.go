@@ -2,10 +2,17 @@ package main
 
 import (
 	"fmt"
+	"log"
 
 	"../car"
 )
 
 func main() {
-	fmt.Println(car.NewCar())
+	c := car.NewCar()
+	fmt.Println(c.DisplayBrandName(2055))
+	displayablaBrand, err := c.DisplayBrandName(2022)
+	if err != nil {
+		log.Fatal("Err")
+	}
+	log.Println(displayablaBrand)
 }
