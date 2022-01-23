@@ -1,7 +1,9 @@
 package main
 
 import (
+	"errors"
 	"fmt"
+	"log"
 )
 
 type MyError struct {
@@ -14,5 +16,13 @@ func (e *MyError) Error() string {
 func main() {
 	var e error
 	e = &MyError{extraInfo: "SSSRrrrra, BOOM!!!"}
-	fmt.Println(e)
+	// fmt.Println(e)
+	var c *MyError
+	check1 := errors.As(e, &c)
+	log.Println(check1)
+	log.Println(&c)
+	eWrapped := fmt.Errorf("Wrapped error %w", e)
+	check2 := errors.Is(eWrapped, e)
+	log.Print(check2)
+
 }
